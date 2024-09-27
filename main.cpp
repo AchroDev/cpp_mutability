@@ -24,5 +24,16 @@ int main()
     const Entity e;
     e.GetName(); // This is also fixed now because the const was restored
 
+    int x = 0;
+
+    // Example Lambda function, essentially a quick "throw-away" function
+    auto f = []()
+    {
+        std::cout << "Hello" << std::endl;
+    };
+
+    // Calling the lambda function
+    f();
+
     std::cin.get();
 }
