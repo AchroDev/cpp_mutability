@@ -30,6 +30,7 @@ int main()
     // auto f = [x]() // Using 'x' by itself and not a reference, uses it as a value
     auto f = [=]() // Writing the Lambda function this way allows us to declare everything as a value in the body
     {
+        x++;                         // Can't do this as the parameters specify a value, works as a reference
         std::cout << x << std::endl; // Now using 'x' instead of the char array
     };
 
