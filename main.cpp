@@ -28,11 +28,10 @@ int main()
 
     // Example Lambda function, essentially a quick "throw-away" function
     // auto f = [x]() // Using 'x' by itself and not a reference, uses it as a value
-    auto f = [=]() // Writing the Lambda function this way allows us to declare everything as a value in the body
+    auto f = [=]() mutable // Writing the Lambda function this way allows us to declare everything as a mutable value in the body
     {
-        int y = x;                   // Would have to be written this way
-        y++;                         // and doing all of this is a bit messy and odd
-        std::cout << y << std::endl; // Now using 'x' instead of the char array
+        x++; // Now this works as the Lambda function has been declared mutable
+        std::cout << x << std::endl;
     };
 
     // Calling the lambda function
