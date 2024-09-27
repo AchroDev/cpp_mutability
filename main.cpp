@@ -27,7 +27,7 @@ int main()
     int x = 0;
 
     // Example Lambda function, essentially a quick "throw-away" function
-    auto f = [&x]() // If we use 'x' we must define a catcher method in the brackets, &x provides a reference
+    auto f = [x]() // Using 'x' by itself and not a reference, uses it as a value
     {
         std::cout << x << std::endl; // Now using 'x' instead of the char array
     };
