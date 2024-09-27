@@ -30,8 +30,8 @@ int main()
     // auto f = [x]() // Using 'x' by itself and not a reference, uses it as a value
     auto f = [=]() mutable // Writing the Lambda function this way allows us to declare everything as a mutable value in the body
     {
-        x++; // Now this works as the Lambda function has been declared mutable, however it works the same as creating another variable as it still
-             // doesn't change the original value
+        x++; // Now this works as the Lambda function has been declared mutable, however it works the same as creating another variable and storing the increment
+             // as it still doesn't change the original value as it isn't a reference. You could change from [=] to [&] and modify the original value
         std::cout << x << std::endl;
     };
 
