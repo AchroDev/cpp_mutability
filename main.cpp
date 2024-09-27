@@ -28,7 +28,7 @@ int main()
 
     // Example Lambda function, essentially a quick "throw-away" function
     // auto f = [x]() // Using 'x' by itself and not a reference, uses it as a value
-    auto f = [&]() // Writing the Lambda function this way allows us to declare everything as reference in the body
+    auto f = [=]() // Writing the Lambda function this way allows us to declare everything as a value in the body
     {
         std::cout << x << std::endl; // Now using 'x' instead of the char array
     };
